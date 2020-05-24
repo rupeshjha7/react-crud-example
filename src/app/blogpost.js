@@ -18,6 +18,7 @@ function BlogPost() {
             if (post.id === id) {
                 post.body = updatepost.body;
                 post.title = updatepost.title;
+                post.userId = updatepost.userId;
             }
             return post;
         });

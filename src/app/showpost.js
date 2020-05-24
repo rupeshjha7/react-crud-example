@@ -10,6 +10,7 @@ const ShowPost = (props) => {
                     <th scope="col">ID</th>
                     <th scope="col">TITLE</th>
                     <th scope="col">BODY</th>
+                    <th scope="col">userId</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -20,6 +21,7 @@ const ShowPost = (props) => {
                         <td>{post.id}</td>
                         <td>{post.title}</td>
                         <td>{post.body}</td>
+                        <td>{post.userId}</td>
                         <td><button type="button" className="btn btn-primary"
                             onClick={() => onEdit(post)}>Update</button></td>
                         <td><button type="button" className="btn btn-primary"

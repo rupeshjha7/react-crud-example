@@ -7,7 +7,8 @@ function AddPost(props) {
 
     const [selectedPost, setSelectedPost] = useState(null);
     const [title, settitle] = useState('');
-    const [body, setbody] = useState('')
+    const [body, setbody] = useState('');
+    const [userId, setuserId] = useState('')
 
 
 
@@ -15,6 +16,7 @@ function AddPost(props) {
         setSelectedPost(post);
         setbody(post.body);
         settitle(post.title);
+        setuserId(post.userId);
     }, [post])
 
     const handleInputs = (e) => {
@@ -23,6 +25,9 @@ function AddPost(props) {
         }
         if (e.target.name === 'body') {
             setbody(e.target.value);
+        }
+        if (e.target.name === 'userId') {
+            setuserId(e.target.value);
         }
     }
 
@@ -33,7 +38,7 @@ function AddPost(props) {
             id: selectedPost.id,
             title: title,
             body: body,
-            userid: selectedPost.userid,
+            userid: selectedPost.userId,
         };
         if (newpost.id) {
             onUpdate(newpost);
@@ -68,9 +73,13 @@ function AddPost(props) {
                 <textarea className="form-control" name="body" aria-label="With textarea"
                     placeholder="body..." value={body} onChange={handleInputs} required />
             </div>
+            <div className="form-group mt-3">
+                <input type="text" name="userId" className="form-control" placeholder="userId..."
+                    value={userId} onChange={handleInputs} required />
+            </div>
            
 
-            <div className="form-group">
+            <div className="form-group mt-3">
                 <button type="button" className="btn btn-primary" onClick={saveData}>Submit</button>
             </div>
         </div>
