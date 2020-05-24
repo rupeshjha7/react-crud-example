@@ -47,23 +47,10 @@ function AddPost(props) {
         }
 
     };
-
-    // componentDidUpdate(prev, props) {
-    //     if (this.props.post !== prev.post) {
-    //         this.setState({ post: this.props.post });
-
-    //     }
-    // }
-
-
-
-
-
-
     return (
         <div >
             <div className="form-group">
-                <h2>CRUD</h2>
+                <h2 className="text-center mb-5 mt-0 ">CRUD Operation</h2>
             </div>
             <div className="form-group">
                 <input type="text" name="title" className="form-control" placeholder="Title..."
