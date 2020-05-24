@@ -50,7 +50,7 @@ function BlogPost() {
         Axios.delete(`${baseurl}/posts/${id}`).then((response) => {
             const newposts = posts.filter(post => (post.id !== id));
             setposts(newposts);
-            setsuccess("Updated Successfully");
+            setsuccess("Deleted Successfully");
             setloading(false);
             deletemsg();
 
